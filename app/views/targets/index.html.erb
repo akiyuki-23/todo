@@ -1,0 +1,19 @@
+<div class="content row">
+hello world
+  <% @targets.each do |target| %>
+    <div class="card">
+      <div class="card-title">
+        <%= target.title %>
+      </div>
+      <div class="card-body">
+        <%= target.description %>
+        <p class="card-date">
+          <%= target.due_date %>
+        </p>
+        <p class="card-complete">
+          <%= target.completed %>
+        </p>
+      </div>
+    </div>
+  <% end %>
+</div>
