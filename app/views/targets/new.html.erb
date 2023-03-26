@@ -1,0 +1,22 @@
+<div class="contents-row">
+  <div class="container">
+    <h3>投稿する</h3>
+    <%= form_with(model: @target, local: true) do |form| %>
+    <ul>
+      <li class="date">
+        <%= form.date_field :due_date, min: Date.current %>
+      </li>
+      <li class="title">
+        <%= form.text_field :title, placeholder: "Title" %>
+      </li>
+      <li class="description">
+        <%= form.text_area :description, placeholder: "text", rows: "10" %>
+      </li>
+      <li class="completed">
+        <%= form.select :completed ,[['完了', true],['未完了', false]] %>
+      </li>
+      <li><%= form.submit "SEND" %></li>
+    <% end %>
+    </ul>
+  </div>
+</div>
